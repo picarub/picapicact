@@ -3,7 +3,7 @@
 ### a react based SPA web page
 
     git clone https://github.com/picarub/picapicact.git
-    cd picapica && npm start
+    cd picapicact && npm start
 
  surf on 127.0.0.1  (by default using port 80)
 
