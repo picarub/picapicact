@@ -19,11 +19,11 @@ app.get('/a/find', async (req, res) => {
  let q = req.query
  if ('keyword' in q){
   if (q.keyword === null) { console.log('empty') }
-  let kw = await doRequest('https://cn.picapica.pw/a/find?keyword=' + q.keyword)
+  let kw = await doRequest('https://picapica.pw/a/find?keyword=' + q.keyword)
   return res.send(kw)
  }
  if ('timeline' in q){
-  let tl = await doRequest('https://cn.picapica.pw/a/find?timeline=' + q.timeline)
+  let tl = await doRequest('https://picapica.pw/a/find?timeline=' + q.timeline)
   return res.send(tl)
  }
  if ('member' in q){

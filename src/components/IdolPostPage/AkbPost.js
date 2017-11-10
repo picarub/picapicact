@@ -1,4 +1,4 @@
-import { urlrify } from './util'
+import { urlrify } from '../util'
 
 export default class AkbPost extends React.Component{
  constructor(props) {
@@ -15,7 +15,7 @@ export default class AkbPost extends React.Component{
  render(){
   let now = moment()
   return(
-   <div className='col-12' style={{margin:'0 auto',maxWidth:'600px'}}>  
+   <div style={{margin:'0 auto',maxWidth:'600px'}}>  
     {this.state.posts.map((po, i) => { 
      return(
       <div key={'po_s'+ i} className='post-margin'>

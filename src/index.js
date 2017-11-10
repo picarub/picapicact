@@ -5,8 +5,8 @@ import { getfetch } from './store/util'
 import { addMusicData, addAkbPost } from './store/action'
 import NoMatch from './components/NoMatch'
 import Header from './components/Header'
-import MusicBox from './components/MusicBox'
-import AkbPost from './components/AkbPost'
+import MusicBox from './components/MusicPage/MusicBox'
+import AkbPost from './components/IdolPostPage/AkbPost'
 import Search from './components/Search'
 
 
@@ -16,8 +16,7 @@ let stpAkbPost = state => ({posts: state.akbPostStore})
 let MusicBox1 = connect(stpMusic)(MusicBox)             /* connect到redux数据的组件 */
 let Akb48 = connect(stpAkbPost)(AkbPost)
 
-let Fit = props => {                                    /* 整齐每页内容的组件 */
- return (
+let Fit = props => (
  <div style={{margin:'1em auto',maxWidth:'1200px',textAlign:'center'}}>
   <div className='row page' style={{justifyItems:'center'}}>
    <div className='sm-1 md-2 lg-3 invisble-xs visible-xl' style={props.s}>
@@ -27,22 +26,31 @@ let Fit = props => {                                    /* 整齐每页内容的
    </div>
   </div>
  </div>
- )
-}
+)
+
 
 let MusicPage = props => (                               /* 组装页面 */
- <Fit s={{margin:'.75em 0',padding:'0 1em'}}>
-  <Search c='col-12 visible-xs' s={{margin:'-1.25em .75em 1em 0'}}/>
-  <MusicBox1/>   
- </Fit>
+ <div style={{margin:'1em auto',maxWidth:'1200px',textAlign:'center'}}>
+  <div className='row page' style={{justifyContent:'center'}}>                       
+   <div className='sm-90 md-85 lg-80 center' style={{maxWidth:'900px'}}>
+    <Search c='visible-xs' s={{margin:'0 .75em .5em 0'}}/>
+    <MusicBox1/>
+   </div>
+  </div>   
+ </div>
 )
 
 
 let IdolPostPage = props => (                             /* 组装页面 */
- <Fit>
-  <Search c='visible-xs col-12' s={{margin:'0 0 -1em 0'}}/>
-  <Akb48/>
- </Fit>   
+ <div style={{margin:'1em auto',maxWidth:'1200px',textAlign:'center'}}>
+   <div className='row page' style={{justifyItems:'center'}}>
+    <div class='sm-10 md-15 lg-20 invisible-xs visible-xl'></div>
+    <div className='sm-80 md-70 lg-60 center'>    
+     <Search c='visible-xs col-12' s={{margin:'0 0 -1em 0'}}/>
+     <Akb48/>
+    </div>
+   </div>
+ </div>   
 )
 
 
@@ -58,7 +66,7 @@ class Rt extends React.Component {                         /* 根组件 */
   this.getfetch = getfetch
  }
  componentDidMount() {
-  this.getfetch('/a/find?keyword=48', addMusicData)
+  this.getfetch('/a/find?keyword=fi', addMusicData)
   this.getfetch('/a/find?timeline', addAkbPost, 1)
  }
  render() {

@@ -1,5 +1,5 @@
-import { addMusicData, addMemberInfo, addAkbPost, addTubeData, addDramaData, addMotionData } from '../store/action'
-import store from '../store/store'
+import { addMusicData, addMemberInfo, addAkbPost, addTubeData, addDramaData, addMotionData } from '../../store/action'
+import store from '../../store/store'
 import MusicBar from './MusicBar'
 
 export default class MusicBox extends React.Component{
