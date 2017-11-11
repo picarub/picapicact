@@ -7,4 +7,4 @@
 
  surf on 127.0.0.1/jpop  (by default using port 80)
 
-[Home Page](https://picapica.pw/jpop)
+[Home Page](https://picapica.pw/a/jpop)
